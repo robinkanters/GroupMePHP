@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class bots extends client
+class Bots extends AbstractClient
 {
     /**
      * create: Create a new bot.

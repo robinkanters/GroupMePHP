@@ -1,11 +1,14 @@
 <?php
 
+use GroupMePHP\AbstractClient;
+
 class ClientTest extends PHPUnit_Framework_TestCase
 {
+    /* @var AbstractClient */
     private $c;
 
-    public function __construct () {
-        $this->c = new GroupMePHP\client('token');
+    public function setUp () {
+        $this->c = new AbstractClient('token');
     }
 
     public function testSimpleQueryString()

@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class sms extends client
+class Sms extends AbstractClient
 {
     /**
      * enable: Enable SMS mode for up to 48 hours.

@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class directmessages extends client
+class DirectMessages extends AbstractClient
 {
     /**
      * index: Fetch direct messages between two users.

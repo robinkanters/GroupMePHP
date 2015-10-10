@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class users extends client
+class Users extends AbstractClient
 {
     /**
      * me: Get details about the authenticated user.

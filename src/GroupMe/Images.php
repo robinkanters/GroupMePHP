@@ -2,12 +2,12 @@
 
 namespace GroupMePHP;
 
-class images extends image_client
+class Images extends ImageClient
 {
     /**
      * pictures: Uploads a picture to the GroupMe Image servvice and returns the URL.
      *
-     * @param $url URL to image
+     * @param $url string to image
      *
      * @return string $response from GroupMe API
      */

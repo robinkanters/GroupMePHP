@@ -2,49 +2,7 @@
 
 namespace GroupMePHP;
 
-require 'groupme/directmessages.php';
-require 'groupme/groups.php';
-require 'groupme/likes.php';
-require 'groupme/members.php';
-require 'groupme/messages.php';
-require 'groupme/users.php';
-require 'groupme/bots.php';
-require 'groupme/sms.php';
-require 'groupme/leaderboard.php';
-require 'groupme/images.php';
-
-class groupme
-{
-    public $directmessages;
-    public $groups;
-    public $likes;
-    public $members;
-    public $messages;
-    public $users;
-    public $bots;
-    public $sms;
-    public $leaderboard;
-
-    public function __construct($token = '')
-    {
-        if (isset($token)) {
-            $this->directmessages = new directmessages($token);
-            $this->groups = new groups($token);
-            $this->likes = new likes($token);
-            $this->members = new members($token);
-            $this->messages = new messages($token);
-            $this->users = new users($token);
-            $this->bots = new bots($token);
-            $this->sms = new sms($token);
-            $this->images = new images($token);
-            $this->leaderboard = new leaderboard($token);
-        } else {
-            die('You must include a user or application token');
-        }
-    }
-}
-
-class client
+class AbstractClient
 {
     private $token = '';
     protected $url = 'https://api.groupme.com/v3';
@@ -52,7 +10,6 @@ class client
     /*
      * When creating a new groupmeClient object
      * send array with 'access_token'
-     * 
      */
     public function __construct($token)
     {
@@ -99,7 +56,6 @@ class client
 
         if ($args['method'] == 'POST') {
             if (isset($args['payload'])) {
-                $payload = '';
                 if (isset($args['payload']['file'])) {
                     $payload = $args['payload'];
                 } else {
@@ -110,15 +66,10 @@ class client
                 curl_setopt($c, CURLOPT_POSTFIELDS, $payload);
             }
         }
-        $info = curl_getinfo($c);
+
         $response = curl_exec($c);
         curl_close($c);
 
         return $response;
     }
-}
-
-class image_client extends client
-{
-    protected $url = 'https://image.groupme.com';
 }

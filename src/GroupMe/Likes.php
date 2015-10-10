@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class likes extends client
+class Likes extends AbstractClient
 {
     /**
      * create: Like a message.

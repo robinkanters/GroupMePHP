@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class messages extends client
+class Messages extends AbstractClient
 {
     /**
      * index: Retrieve messages for a group.

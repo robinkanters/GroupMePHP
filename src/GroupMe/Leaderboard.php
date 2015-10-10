@@ -2,7 +2,7 @@
 
 namespace GroupMePHP;
 
-class leaderboard extends client
+class Leaderboard extends AbstractClient
 {
     /**
      * A list of the liked messages in the group for a given period of time. Messages are ranked in order of number of likes.

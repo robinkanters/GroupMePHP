@@ -5,7 +5,7 @@ namespace GroupMePHP;
 /**
  * Class members.
  */
-class members extends client
+class Members extends AbstractClient
 {
     /**
      * add: Add members to a group.
