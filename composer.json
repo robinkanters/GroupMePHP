@@ -1,12 +1,12 @@
 {
-  "name": "zzbomb/groupme",
+  "name": "robinkanters/groupme",
   "type": "library",
-  "description": "Groupme Library for PHP",
+  "description": "GroupMe Library for PHP",
   "keywords": [
     "php",
     "groupme"
   ],
-  "homepage": "https://github.com/zzbomb/GroupMePHP",
+  "homepage": "https://github.com/robinkanters/GroupMePHP",
   "license": "MIT",
   "authors": [
     {
@@ -14,6 +14,10 @@
       "email": "john.spaetzel@gmail.com",
       "homepage": "http://johnspaetzel.com",
       "role": "Developer"
+    },
+    {
+      "name": "Robin Kanters",
+      "email": "robin@robinkanters.nl"
     }
   ],
   "require": {
