@@ -54,17 +54,15 @@ class AbstractClient
         $curlurl = $this->url.$args['url'].$this->buildQueryString($args['query']);
         curl_setopt($c, CURLOPT_URL, $curlurl);
 
-        if ($args['method'] == 'POST') {
-            if (isset($args['payload'])) {
-                if (isset($args['payload']['file'])) {
-                    $payload = $args['payload'];
-                } else {
-                    $payload = json_encode($args['payload']);
-                    curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
-                }
-
-                curl_setopt($c, CURLOPT_POSTFIELDS, $payload);
+        if ($args['method'] == 'POST' && isset($args['payload'])) {
+            if (isset($args['payload']['file'])) {
+                $payload = $args['payload'];
+            } else {
+                $payload = json_encode($args['payload']);
+                curl_setopt($c, CURLOPT_HTTPHEADER, array('Content-Type: application/json'));
             }
+
+            curl_setopt($c, CURLOPT_POSTFIELDS, $payload);
         }
 
         $response = curl_exec($c);
